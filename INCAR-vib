@@ -1,0 +1,6 @@
+SYSTEM = B9
+ISMEAR = 0   ! Gaussian smearing
+IBRION = 5   ! vibrational spectrum
+NFREE = 2    ! use central differences
+POTIM = 0.02 ! 0.02 stepwidth
+NSW = 1      ! ionic steps must be larger 0 (that’s all)

@@ -1,0 +1,52 @@
+#!/bin/sh
+#PBS -N 0.125_dop_rel
+#PBS -l select=1:ncpus=24               
+#PBS -l walltime=02:00:00               
+#PBS -l place=scatter
+#PBS -j oe
+#PBS -l accelerator_type="None"	
+. /opt/modules/default/init/sh
+cd $PBS_O_WORKDIR
+export MPICH_VERSION_DISPLAY=1
+export MPICH_ENV_DISPLAY=1
+export MPICH_GNI_MBOX_PLACEMENT=nic
+export OMP_NUM_THREADS=1
+#module swap PrgEnv-cray PrgEnv-intel
+module load pbs/12.2.402.142964
+#module unload cray-libsci
+module load cray-mpich/7.0.5
+module load fftw/3.3.4.0
+#mkdir previous_run_n 
+#mv POSCAR-* OUTCAR-*  OSZICAR-* previous_run_n
+#cp CONTCAR POSCAR
+#cp OSZICAR OSZICAR-1
+#cp OUTCAR OUTCAR-1
+for i in 5.44 5.46 5.48 5.50 5.52 5.54 5.56
+do
+mkdir $i
+cd $i
+j=`echo "scale=16;13/$i" | bc`
+cat >POSCAR <<!
+New structure
+$i
+        1.0000000000         0.0000000000         0.0000000000
+       -0.5000000000         0.8660254038         0.0000000000
+        0.0000000000         0.0000000000         $j
+    C B
+    1 7
+Direct
+     0.666999996         0.333000004         0.500000000
+     0.333000004         0.666999996         0.500000000
+     0.666999996         0.666999996         0.500000000
+     0.333000004         0.333000004         0.500000000
+     0.333000004         0.000000000         0.500000000
+     0.666999996         0.000000000         0.500000000
+     0.000000000         0.333000004         0.500000000
+     0.000000000         0.666999996         0.500000000
+!
+cp ../{INCAR,KPOINTS,POTCAR} .
+aprun -n 24 -N 24 -j1 /mnt/lustre/mrc2/mrcrites/VASP-CRAY/vasp5.3.5/vasp.5.3/vasp
+E=`tail -1 OSZICAR | awk '{printf"%15.12f\n",$5}'`
+echo $i $E >> ../lattice_par_2
+cd ../
+done
