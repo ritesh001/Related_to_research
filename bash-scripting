@@ -1,0 +1,10 @@
+sed -n '1 h; 3{x;G;s/\n/ /;p}' fname                      ! to join lines 1 & 3 of a file into a single line
+tail -1 OSZICAR | awk '{printf"%15.12f\n",$5}'            ! to find final energy  
+grep Energy dbc.dat | awk '{printf"%15.12f\n",$5}'        ! to print column 5 containing expression Energy of file dbc.dat 
+grep THz OUTCAR | awk '{printf"%15.12f\n",($10*1E-3)/2}'  ! for calculating ZPE
+awk '{ sum += $1 } END { print sum }' test                ! to add rows of '1st' column of a file 'test'
+awk 'FNR>2 {print $5}' ACF.dat                            ! to print column 5 excluding first 2 rows of file ACF.dat
+k=`echo "scale=16;$c/$b" | bc`                            ! for division of real expression
+i=`expr $a + 2`                                           ! for addition of integer expression
+paste -d " "  - - < filename                              ! to paste two consecutive two lines of a file into a single line
+sed -n 16224,16482p filename > newfile                    ! to print between 16224 and 16482 lines of a file into a new file

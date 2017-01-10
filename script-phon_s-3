@@ -1,0 +1,28 @@
+#!/bin/bash
+#PBS -N site-4e-4f
+#PBS -l select=1:ncpus=24
+#PBS -l walltime=2:00:00
+#PBS -l place=scatter
+#PBS -j oe
+#PBS -S /bin/sh@sdb -V
+#PBS -l accelerator_type="None"
+. /opt/modules/default/init/sh
+
+cd $PBS_O_WORKDIR
+export MPICH_VERSION_DISPLAY=1
+export MPICH_ENV_DISPLAY=1
+export MPICH_GNI_MBOX_PLACEMENT=nic
+export OMP_NUM_THREADS=1
+
+
+for i in  $(seq -f "%03g" 1 8)
+do
+mkdir disp-$i
+cp INCAR  POTCAR KPOINTS POSCAR-$i disp-$i/
+cd disp-$i
+cp POSCAR-$i POSCAR
+
+aprun -n 24 -N 24 -j1 /mnt/lustre/mrc2/mrcrites/VASP-CRAY/vasp5.3.5/vasp.5.3/vasp
+
+cd ../
+done
