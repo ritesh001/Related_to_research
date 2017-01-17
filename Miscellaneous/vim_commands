@@ -1,0 +1,9 @@
+Ctrl+V                                                    ! starting visual block (selecting and copying columns)
+Ctrl+W+W                                                  ! for moving to other files when more than one files are open
+Shift+4 (then) A                                          ! for moving to end of a line and going to insert mode
+vim -o file1 file2                                        ! showing 2 file horizontally
+vim -O file1 file2                                        ! showing 2 file vertically
+vimdiff file1 file2                                       ! showing differnce between two files
+G+G                                                       ! going to beginning of a document
+Shift+G                                                   ! going to end of the document   
+Ctrl+B                                                    ! similar to page up
