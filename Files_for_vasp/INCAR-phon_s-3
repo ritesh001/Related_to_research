@@ -1,0 +1,20 @@
+#phonon dispersion
+ System = Si2Te3
+ ISMEAR = 0
+ SIGMA = 0.1
+ EDIFF  =  1.0e-08
+ IBRION = -1
+ ENCUT = 400
+ PREC = Accurate
+ ADDGRID = .TRUE.
+ LCHARG = .FALSE.
+ LWAVE = .FALSE.
+ LREAL = .FALSE.
+# ISYM = 0
+ NCORE = 24
+ NELMIN = 5
+ LSCALU = .FALSE.
+ NSIM = 4
+ IALGO = 38
+
+

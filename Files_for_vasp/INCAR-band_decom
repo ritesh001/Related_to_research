@@ -1,0 +1,32 @@
+TEM = MoWS2
+   ISTART = 2
+   ICHARG = 1 
+   ISMEAR =  0
+   SIGMA = 0.001
+#   NBANDS = 64
+#   ENCUT = 500
+#   IALGO = 48
+   EDIFF  = 1.0e-05
+   EDIFFG = -0.005
+#NELM   =             15    #  maximum of 40 electronic steps
+#NELMIN =              2    #  minimum of two steps
+   NSW = 0
+   IBRION = -1
+   POTIM = 0.2
+#   LWAVE=.FALSE.
+#   LORBIT = 11
+#   ISPIN = 2
+   NCORE = 24
+####Van-de-Waal_parameters####   
+   LVDW = .TRUE.
+   VDW_RADIUS   = 30.0
+   VDW_SCALING   = 0.75
+   VDW_D   = 20.0
+   VDW_C6   = 1.75 1.23
+   VDW_R0   = 1.452 1.397
+####Band_decomposed_charge_density#####
+   LPARD = .TRUE.
+   LSEPB = .TRUE.
+   LSEPK = .TRUE.
+   IBAND = 225 226 
+   KPUSE = 1 40
