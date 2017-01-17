@@ -1,0 +1,27 @@
+SYSTEM = P
+   ISTART =1
+   ISMEAR = 0
+   SIGMA = 0.1
+   EDIFF  =  0.0001
+   EDIFFG =  -0.005
+#NELM   =             15    #  maximum of 40 electronic steps
+#NELMIN =              2    #  minimum of two steps
+   IBRION = 2
+   POTIM = 0.2
+   TIME   =   0.40    #timestep for ELM
+# Write flags
+   LWAVE  =     .TRUE.
+   LCHARG = .FALSE.
+   LHFCALC =    .TRUE.     # Hartree Fock is set to
+   PREFOCK = Fast
+   ALGO =Normal
+   #AEXX    =    0.40 # exact exchange contribution
+   HFSCREEN= 0.2000  # screening length (either q_TF or 0.3 A-1)
+   KPAR = 13
+   LVDW = .TRUE.
+   VDW_RADIUS   = 30.0
+   VDW_SCALING   = 0.75
+   VDW_D   = 20.0
+   VDW_C6   = 1.75 1.23
+   VDW_R0   = 1.452 1.397
+   LORBIT = 11
