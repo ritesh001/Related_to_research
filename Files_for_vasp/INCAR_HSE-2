@@ -1,4 +1,3 @@
-general:
  System =C2N
    ISTART =1
    ISMEAR = 0
