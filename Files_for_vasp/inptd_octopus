@@ -60,4 +60,4 @@ PropagationSpectrumEnergyStep = 0.1*eV
 
 TDPropagator = aetrs
 TDTimeStep = 0.02
-TDMaxSteps = 20
+TDMaxSteps = 2000
