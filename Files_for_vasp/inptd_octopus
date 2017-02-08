@@ -1,0 +1,63 @@
+CalculationMode = td 
+ExperimentalFeatures = yes
+FromScratch = yes
+
+PeriodicDimensions = 2
+
+ParDomains = auto
+ParKPoints = auto
+
+
+BoxShape = parallelepiped
+a = 6.02819456517631
+
+Spacing= a/15
+
+LL = 20
+
+%LatticeParameters
+  a | a | 2*LL
+%
+
+
+%LatticeVectors
+1    | 0         | 0.
+1/2  | sqrt(3)/2 | 0.
+0.   | 0.        | 1.
+%
+
+pseudopotentialset = hgh_lda
+
+%ReducedCoordinates
+ "W" | 0.6666673499999973 | 0.6666673499999973 | 0.3258398109877874  
+ "S" | 0.3333331700000031 | 0.3333331700000031 | 0.2613536600128756
+ "S" | 0.3333331600000022 | 0.3333331600000022 | 0.3903260021084631
+%
+
+ExtraStates = 4
+
+%KPointsgrid
+4 | 4 | 1
+%
+
+
+#KPointsUseSymmetries = no
+
+## TD begins here
+
+
+%GaugeVectorField
+1.0 | 0.0 | 0.0
+%
+
+#TDPolarizationDirection = 1
+#TDDeltaStrength = 0.01/angstrom
+
+
+PropagationSpectrumMaxEnergy = 10.0*eV
+PropagationSpectrumEnergyStep = 0.1*eV
+
+
+TDPropagator = aetrs
+TDTimeStep = 0.02
+TDMaxSteps = 20
