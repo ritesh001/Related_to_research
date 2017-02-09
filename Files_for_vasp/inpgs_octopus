@@ -26,7 +26,8 @@ LL = 20
 0.   | 0.        | 1.
 %
 
-pseudopotentialset = hgh_lda
+XCFunctional = GGA_X_PBE + GGA_C_PBE
+pseudopotentialset = hscv_pbe
 
 %ReducedCoordinates
  "W" | 0.6666673499999973 | 0.6666673499999973 | 0.3258398109877874  
