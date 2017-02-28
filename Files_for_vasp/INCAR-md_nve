@@ -1,0 +1,35 @@
+System = C2N-WS2
+
+ALGO = V
+
+MAXMIX = 40
+
+IBRION = 0   !do molecular dynamics
+
+NSW = 500   !number of time steps
+
+#IWAVPR = 11   ! if shows error of orthogonal bands then uncomment the tag
+
+NBLOCK = 4  !store structure every time step
+
+POTIM = 1.5  !time step 3fs
+
+TEBEG = 300  !target temperature
+
+ISYM = 0  !turn off symmetry
+
+SMASS = -3  !NVE ensemble
+
+LREAL =Auto
+
+LCHARG =.FALSE.
+
+LWAVE = .F.
+
+NELMIN = 4
+
+PREC = Normal  !reduce energy cut-off by 25% for MD
+
+ISTART = 0
+
+ISMEAR = 0; SIGMA=0.2
