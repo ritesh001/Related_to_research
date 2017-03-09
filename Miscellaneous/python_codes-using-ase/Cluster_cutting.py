@@ -1,7 +1,7 @@
 from ase.io import read, write
 from ase import Atoms
 from ase.visualize import view
-from ase.structure import molecule
+from ase.build import molecule
 
 cluster = read('hcp.vasp')
 #view(cluster)
