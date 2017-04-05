@@ -1,4 +1,7 @@
-f = open("test", "r")
+#write the name of the file which contains data while running the script
+import sys 
+#print sys.argv[1]
+f = open(sys.argv[1], "r")
 b=[]
 for line in f:
     a = line.split()
