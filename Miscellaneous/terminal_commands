@@ -9,7 +9,7 @@ echo -ne "\033]0;SOME_Cray\007"                           ! to change title of t
 du -sh /tmp                                               ! Size of a directory          
 du -h /tmp/xyz                                            ! Size of a file
 sort -k <column no> <file>                                ! Sorting through column no in decreasing order
-sort -r -k <column no> <file>                             ! Sorting through column no in decreasing order
+sort -r -k <column no> <file>                             ! Sorting through column no in increasing order
 Ctrl + A	                                          ! Go to the beginning of the line you are currently typing on
 Ctrl + E	                                          ! Go to the end of the line you are currently typing on
 Ctrl + L              	                                  ! Clears the Screen, similar to the clear command
