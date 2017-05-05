@@ -1,4 +1,6 @@
-### First run bader script from which ACF.dat file is generated ###
+#!/usr/bin/env python
+"""First run bader script from which ACF.dat file is generated"""
+"""Directory should also contain POSCAR and POTCAR files"""
 
 import os
 

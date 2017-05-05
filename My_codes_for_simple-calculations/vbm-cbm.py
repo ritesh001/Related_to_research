@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """Run the vbm-cbm.sh script from directory where data is to be stored"""
 """Directories where uniaxial strain are run, are named as us<strain in % with + or ->"""
 """In these directories, bandstructures are run with another directory named as PBE_bands"""
