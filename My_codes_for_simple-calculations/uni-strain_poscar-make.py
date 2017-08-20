@@ -12,11 +12,11 @@ f = open('a_values','w')
 
 b = sys.argv[1]
 
-j = -7
-for i in range(8):
+j = -7                                                                          #initial strain
+for i in range(8):                                                              #no of poscars to generate
 	poscar = read('POSCAR')
 	a = poscar.cell
-	k =  j + i*2.0
+	k =  j + i*2.0                                                              #interval of strains
 	l = k/100
 	if k > 0:
 		c = '+' + str(k)
