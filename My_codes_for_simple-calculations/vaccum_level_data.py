@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 #write the name of the file which contains data while running the script
 import sys 
 #print sys.argv[1]
