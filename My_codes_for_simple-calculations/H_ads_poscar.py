@@ -11,6 +11,7 @@ from shutil import copyfile                                                     
 curr_dir = os.getcwd()
 
 hetero = read('POSCAR')
+n = hetero.get_number_of_atoms()
 hetero.append('H')
 
 for i in range(18):                                                             # no of atoms at which H are to be adsorbed
@@ -25,9 +26,9 @@ for i in range(18):                                                             
     os.chdir(path)
     pos = hetero.get_positions()
     coor = pos[i][2]
-    coor1 = coor + 1.00                                                         # distance at which H is to be adsorbed 
-    pos[18] = pos[i]
-    pos[18][2] = coor1
+    coor1 = coor + 1.00                                                         # distance at which H is to be adsorbed
+    pos[n] = pos[i]
+    pos[n][2] = coor1
     hetero.set_positions(pos)
     write('POSCAR',hetero)
     ## The directory in which this script is run should contain INCAR, KPOINTS and POTCAR ##
