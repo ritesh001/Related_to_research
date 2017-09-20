@@ -14,4 +14,5 @@ for n in range(5):
 plt.legend(loc='upper left')
 plt.title('Prob 3 : Landau energy levels(E) vs B for graphene')
 plt.xlabel('Magnetic field (T) -->'); plt.ylabel('Energy (eV) --->')
+# plt.xticks(np.arange(5,20,4))
 plt.show()
