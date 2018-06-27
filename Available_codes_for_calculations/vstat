@@ -1,0 +1,48 @@
+#!/bin/bash
+#set -xv
+#Tested in TUE
+
+echo "Folders :" $(ls -d */ |wc -l)
+
+[ -f done ] && rm -f done
+[ -f todo ] && rm -f todo
+[ -f failed ] && rm -f failed
+
+vasp_done=0
+vasp_failed=0
+vasp_todo=0
+for ik in $(ls -d */)
+do
+cd $ik
+    if [ -s OUTCAR ] && [ -s OSZICAR ]
+      then
+        str1="F="
+        str2=$(tail -n 1 OSZICAR | awk '{print $2}')
+    
+        str3="Voluntary"
+        str4=$(tail -n 1 OUTCAR | awk '{print $1}')
+    
+        if [ "$str1" == "$str2" ]   && [ "$str3" == "$str4" ]
+          then
+            #echo "VASP Done!!!  " ${PWD##*/}
+            ((vasp_done++))
+            echo ${PWD##*/} >> ../done
+        else
+            #echo "VASP failed : " ${PWD##*/}
+            ((vasp_failed++))
+            echo ${PWD##*/} >> ../failed
+        fi
+    else
+        #echo "VASP TODO : " ${PWD##*/}
+        ((vasp_todo++))
+        echo ${PWD##*/} >> ../todo
+    fi
+cd ..
+done
+
+echo "Making the list . . ."
+echo "Done    : $vasp_done     > done"
+echo "Failed  : $vasp_failed   > failed"                             
+echo "Todo    : $vasp_todo     > todo"
+
+

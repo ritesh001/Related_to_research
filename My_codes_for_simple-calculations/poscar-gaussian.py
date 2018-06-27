@@ -6,9 +6,10 @@ import pymatgen
 from pymatgen.io.gaussian import Molecule, GaussianInput
 from pymatgen.io.vasp import Structure, Poscar
 from pymatgen.io.xyz import XYZ
+import os
 
 ## Change the following section accordingly and carefully! ##
-new_struc = XYZ.from_file("3-pbe_scf.xyz")                                      # name of xyz file
+new_struc = XYZ.from_file(os.argv[1])                                      # name of xyz file
 tit = '3_water_gas_phase'                                                       # title of input file
 func = 'pbepbe'                                                                 # name of functional used
 bas = 'aug-cc-pvqz'                                                             # name of basis set used, not needed for semi-empirical calculations
