@@ -14,16 +14,6 @@ f4 = open("test","w")
 b=[]; b1=[]
 valence = []
 
-sum_C = 0
-sum_N = 0
-sum_W = 0
-sum_S = 0
-
-C_charges=[]
-N_charges=[]
-W_charges=[]
-S_charges=[]
-
 ##Reading POSCAR file##
 for line in f0:
     a = line.split()
