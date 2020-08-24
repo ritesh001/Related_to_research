@@ -25,3 +25,5 @@ Ctrl + T	                                          ! Swap the last two character
 Esc + T	                                                  ! Swap the last two words before the cursor
 Alt + F	                                                  ! Move cursor forward one word on the current line
 Alt + B	                                                  ! Move cursor backward one word on the current line
+git config --global user.email "you@example.com"          ! For adding commit from new machine on Github
+git config --global user.name "Your Name"                 ! For adding commit from new machine on Github
