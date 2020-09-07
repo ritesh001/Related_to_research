@@ -1,5 +1,7 @@
 find . -name "FILE-TO-FIND" -exec rm -rf {} \;            ! to find & remove a specific folder
 find . -type f -name "FILE" -exec rm -f {} \;             ! to find & remove a specific file
+grep -i -A 10 "nearest" OUTCAR                            ! print 10 lines including and after line containing "nearest" in the file OUTCAR
+grep -i -B 10 "nearest" OUTCAR                            ! print 10 lines including and before line containing "nearest" in the file OUTCAR
 7z x zipfile.zip                                          ! to extract the contents of the zipfile
 nohup ./job.sh &                                          ! to submit job in standalone with the script 'job.sh'
 ssh-keygen -R 192.168.3.10                                ! when "@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @" error shows
