@@ -1,0 +1,2 @@
+grep "!    total energy" <log file> | awk '{printf "%12.8f\n", $4}' | tail -1 ! to extract energy from 'scf' file 
+grep "Final energy" <log file> | awk '{printf "%12.8f\n", $4}' ! to extract energy from 'relax' file 
