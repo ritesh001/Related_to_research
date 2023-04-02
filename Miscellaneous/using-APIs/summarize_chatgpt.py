@@ -7,7 +7,7 @@ __author__ = "Lucas Soares"
 # Here I assume you are on a Jupiter Notebook and download the paper directly from the URL
 # !curl -o paper.pdf https://arxiv.org/pdf/2301.00810v3.pdf?utm_source=pocket_saves
 
-openai.api_key="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"
+openai.api_key=""
 # Set the string that will contain the summary     
 pdf_summary_text = ""
 # Open the PDF file
